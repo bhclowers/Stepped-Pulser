@@ -4,7 +4,7 @@
 
 ### When using this code or system, please reference the following manuscript by Cabrera and Clowers: TBD, Analytical Chemistry, 2021 (Hopefully ;) 
 
-## Extra Note:
+## Extra Notes:
 * STL Box uses 3 mm threaded brass inserts
 * Wio Terminal mount uses 2 mm threads
 * The core widget outputs 3.3 V (max of the Wio).  If you need more use the feather TTL Buffer. 
