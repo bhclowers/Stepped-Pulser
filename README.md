@@ -8,4 +8,9 @@
 * STL Box uses 3 mm threaded brass inserts
 * Wio Terminal mount uses 2 mm threads
 * The core widget outputs 3.3 V (max of the Wio).  If you need more use the feather TTL Buffer. 
-* The feather TTL buffer was originally sold by Evil Genius is currently unavailable (https://www.tindie.com/products/jasoncoon/octo-level-shifter-featherwing/).  Hence our adaptation. If they do go back in stock, please support this creator. 
+* The feather TTL buffer was originally sold by Evil Genius is currently unavailable (https://www.tindie.com/products/jasoncoon/octo-level-shifter-featherwing/).  Hence, our adaptation. If they do go back in stock, please support this creator. 
+* The existing code reads frequencies in blocks of 10 lines but if your pulsing is faster than our system (e.g. every 100 ms) then you may run into skipped triggers as the SD loading does take a few ms.  In that case, increase the pLen varaible. Tested for pLen variables up to 2000.  If you need more ask, we have another solution that doesn't have a LCD--only serial communication.
+* The fidelity of the power supply matters that powers the Wio.  If it is ugly and has lots of AC on it, you will get errant triggers. 
+* The current code has a variable triggerSkip that allows a certain number of triggers to be skipped.  Be mindful of this and test with a scope.  Our original implementation was targeted for a LTQ system that had 2 pulses per scan so one needed to be skipped. 
+* The name of the pulsing sequence csv must be: ps.csv 
+* Keep file names short. 
